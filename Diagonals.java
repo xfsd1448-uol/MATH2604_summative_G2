@@ -6,6 +6,38 @@ class Diagonals
         return new double[] {10.0, 8.0, 5.0, -10.0, 7.0};
     }
 
+    
+    public static double[] sum(double[] a, double[] b) {
+        if (a == null || b == null) {
+            return null;
+        }
+        if (a.length != b.length) {
+            return null;
+        }
+        
+        int n = a.length;
+        double[] result = new double[n];
+        for (int i = 0; i < n; i++) {
+            result[i] = a[i] + b[i];
+        }
+        return result;
+    }
+
+    public static double[] product(double[] a, double[] b) {
+        if (a == null || b == null) {
+            return null;
+        }
+        if (a.length != b.length) {
+            return null;
+        }
+
+        int n = a.length;
+        double[] result = new double[n];
+        for (int i = 0; i < n; i++) {
+            result[i] = a[i] * b[i];
+        }
+        return result;
+    }
 
     /**
      * Computes the inverse of a diagonal matrix.
