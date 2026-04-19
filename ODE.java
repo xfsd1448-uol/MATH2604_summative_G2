@@ -2,11 +2,10 @@ import static java.lang.Math.*;
 
 /**
  * Provides a method for approximating the solution of the differential equation
- * described in the project brief using a finite-difference approach.
+ * using a finite-difference method on the interval [0,1].
  *
- * The method constructs a tridiagonal linear system based on the discretisation
- * of the interval [0,1], and solves it to obtain approximate values of the
- * solution at the grid points.
+ * The method builds and solves a tridiagonal linear system to obtain
+ * approximate values at the grid points.
  */
 
 class ODE
@@ -28,7 +27,7 @@ class ODE
      * @param n the number of interior grid points
      * @return an approximation to f(0.5)
      */
-    
+
     public static double solve(double a, int n) {
 
     // Step size for the grid on [0,1]
