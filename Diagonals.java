@@ -19,7 +19,8 @@ class Diagonals
      *
      * @return a new array representing the diagonal matrix diag(10, 8, 5, -10, 7)
      */
-    public static double[] exampleMatrix() {
+    public static double[] exampleMatrix() 
+    {
         return new double[] {10.0, 8.0, 5.0, -10.0, 7.0};
     }
 
