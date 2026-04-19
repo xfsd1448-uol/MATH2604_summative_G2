@@ -11,24 +11,25 @@ import static java.lang.Math.*;
 class ODE
 {
 
-    /**
-     * Approximates the value of f(0.5) for the boundary value problem
-     * f''(x) = cos(x) f(x) + a x^2 on 0 <= x <= 1 with f(0) = f(1) = 0.
-     *
-     * The method uses the finite-difference construction described in the
-     * project brief and solves the resulting tridiagonal linear system.
-     *
-     * If 0.5 is not a grid point, the result is obtained by averaging
-     * the values at the nearest grid points.
-     *
-     * It is assumed that n > 0.
-     *
-     * @param a the constant in the differential equation
-     * @param n the number of interior grid points
-     * @return an approximation to f(0.5)
-     */
+/**
+* Approximates the value of f(0.5) for the boundary value problem
+* f''(x) = cos(x) f(x) + a x^2 on 0 <= x <= 1 with f(0) = f(1) = 0.
+*
+* The method uses the finite-difference construction described in the
+* project brief and solves the resulting tridiagonal linear system.
+*
+* If 0.5 is not a grid point, the result is obtained by averaging
+* the values at the nearest grid points.
+*
+* It is assumed that n > 0.
+*
+* @param a the constant in the differential equation
+* @param n the number of interior grid points
+* @return an approximation to f(0.5)
+*/
 
-    public static double solve(double a, int n) {
+public static double solve(double a, int n) 
+    {
 
     // Step size for the grid on [0,1]
     double h = 1.0 / (n + 1);
@@ -74,5 +75,5 @@ class ODE
         int rightIndex = leftIndex + 1;
         return (w[leftIndex] + w[rightIndex]) / 2.0;
     }
-  }
+    }
 }
