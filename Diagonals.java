@@ -11,8 +11,18 @@ class Diagonals
         return new double[] {10.0, 8.0, 5.0, -10.0, 7.0};
     }
 
-    
-    public static double[] sum(double[] a, double[] b) {
+    /**
+     * Computes the sum of two diagonal matrices.
+     * The input arrays are not modified.
+     *
+     * @param a the first diagonal matrix representation; may be {@code null}
+     * @param b the second diagonal matrix representation; may be {@code null}
+     * @return a new array representing the diagonal entries of {@code a + b};
+     *         returns {@code null} if either input is {@code null} or if the
+     *         input arrays have different lengths
+     */
+    public static double[] sum(double[] a, double[] b) 
+    {
         if (a == null || b == null) {
             return null;
         }
@@ -27,8 +37,19 @@ class Diagonals
         }
         return result;
     }
-
-    public static double[] product(double[] a, double[] b) {
+    
+    /**
+     * Computes the product of two diagonal matrices.
+     * The input arrays are not modified.
+     *
+     * @param a the first diagonal matrix representation; may be {@code null}
+     * @param b the second diagonal matrix representation; may be {@code null}
+     * @return a new array representing the diagonal entries of {@code a * b};
+     *         returns {@code null} if either input is {@code null} or if the
+     *         input arrays have different lengths
+     */
+    public static double[] product(double[] a, double[] b) 
+    {
         if (a == null || b == null) {
             return null;
         }
@@ -47,6 +68,7 @@ class Diagonals
     /**
      * Computes the inverse of a diagonal matrix.
      *
+     * 
      * The matrix is represented by a one-dimensional array a, where a[i]
      * corresponds to the diagonal entry A(i,i).
      *
