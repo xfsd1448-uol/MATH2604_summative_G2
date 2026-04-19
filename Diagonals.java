@@ -1,5 +1,10 @@
 import static java.lang.Math.*;
 
+/**
+ * Utility methods for working with diagonal matrices stored as one-dimensional arrays.
+ * In this representation, an n x n diagonal matrix is stored in a double[] array of length n,
+ * where a[i] corresponds to the matrix entry A[i][i] on the main diagonal.
+ */
 class Diagonals
 {
     public static double[] exampleMatrix() {
