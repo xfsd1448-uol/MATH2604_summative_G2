@@ -65,7 +65,8 @@ class Diagonals
      *         or null if the input is null
      */
 
-    public static double[] inverse(double[] a) {
+    public static double[] inverse(double[] a) 
+    {
         if (a == null) return null;
 
         int n = a.length;
