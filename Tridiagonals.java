@@ -3,18 +3,25 @@ import static java.lang.Math.*;
 class Tridiagonals
 {
 static double[][] exampleMatrix(int n) 
-    {
-        double m[][] = new double [1][1]; //dummy code: write your own
-        return m; //dummy code: write your own
+{
+    if (n <= 0) {
+        return null;
     }
 
+    double[][] result = new double[3][n];
 
+    for (int i = 0; i < n; i++) {
+        double value = i + 1.0;
+        result[1][i] = -(value * value);
+    }
 
+    for (int i = 0; i < n - 1; i++) {
+        result[0][i] = 1.0;
+        result[2][i] = i + 2.0;
+    }
 
-
-
-
-
+    return result;
+}
 
 
 /**
