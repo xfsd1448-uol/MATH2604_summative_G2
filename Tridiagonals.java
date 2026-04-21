@@ -23,6 +23,38 @@ static double[][] exampleMatrix(int n)
     return result;
 }
 
+public static double[][] productWithDiagonal(double[] d, double[][] t) 
+    {
+        if (d == null || !isValidTridiagonal(t)) 
+        {
+            return null;
+        }
+
+        int n = t[1].length;
+        if (d.length != n) 
+        {
+            return null;
+        }
+
+        double[][] result = new double[3][n];
+        for (int i = 0; i < n - 1; i++) 
+        {
+            result[0][i] = d[i] * t[0][i];
+        }
+
+        for (int i = 0; i < n; i++) 
+        {
+            result[1][i] = d[i] * t[1][i];
+        }
+
+        for (int i = 0; i < n - 1; i++)
+        {
+            result[2][i] = d[i + 1] * t[2][i];
+        }
+
+        return result;
+    }
+
 
 /**
 * Computes the sum of two tridiagonal matrices.
