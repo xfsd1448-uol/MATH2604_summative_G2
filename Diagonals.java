@@ -26,55 +26,73 @@ class Diagonals
 
     /**
      * Computes the sum of two diagonal matrices.
-     * The input arrays are not modified.
+     *
+     * <p>The input arrays are not modified.
      *
      * @param a the first diagonal matrix representation; may be {@code null}
      * @param b the second diagonal matrix representation; may be {@code null}
-     * @return a new array representing the diagonal entries of {@code a + b};
-     *         returns {@code null} if either input is {@code null} or if the
-     *         input arrays have different lengths
+     * @return a new array representing the sum of the two diagonal matrices, or
+     *         {@code null} if either input is {@code null} or if the arrays have
+     *         different lengths; if both input arrays have length 0, the returned
+     *         array also has length 0
      */
-    public static double[] sum(double[] a, double[] b) 
+    static double[] sum(double[] a, double[] b) 
     {
-        if (a == null || b == null) {
+        if (a == null || b == null) 
+        {
             return null;
         }
-        if (a.length != b.length) {
+
+        if (a.length != b.length) 
+        {
             return null;
         }
         
         int n = a.length;
         double[] result = new double[n];
-        for (int i = 0; i < n; i++) {
+
+        // Add corresponding diagonal entries.
+        for (int i = 0; i < n; i++) 
+        {
             result[i] = a[i] + b[i];
         }
+
         return result;
     }
     
     /**
      * Computes the product of two diagonal matrices.
-     * The input arrays are not modified.
+     *
+     * <p>The input arrays are not modified.
      *
      * @param a the first diagonal matrix representation; may be {@code null}
      * @param b the second diagonal matrix representation; may be {@code null}
-     * @return a new array representing the diagonal entries of {@code a * b};
-     *         returns {@code null} if either input is {@code null} or if the
-     *         input arrays have different lengths
+     * @return a new array representing the product of the two diagonal matrices, or
+     *         {@code null} if either input is {@code null} or if the arrays have
+     *         different lengths; if both input arrays have length 0, the returned
+     *         array also has length 0
      */
-    public static double[] product(double[] a, double[] b) 
+    static double[] product(double[] a, double[] b)
     {
-        if (a == null || b == null) {
+        if (a == null || b == null) 
+        {
             return null;
         }
-        if (a.length != b.length) {
+
+        if (a.length != b.length) 
+        {
             return null;
         }
 
         int n = a.length;
         double[] result = new double[n];
-        for (int i = 0; i < n; i++) {
+
+        // Multiply corresponding diagonal entries.
+        for (int i = 0; i < n; i++) 
+        {
             result[i] = a[i] * b[i];
         }
+
         return result;
     }
 
