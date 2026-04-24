@@ -125,7 +125,8 @@ class Diagonals
         int n = a.length;
         double[] inv = new double[n];
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) 
+        {
             inv[i] = 1.0 / a[i];
         }
 
