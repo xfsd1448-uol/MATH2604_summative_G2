@@ -57,6 +57,19 @@ static double[][] exampleMatrix(int n)
 }
 
 
+    /**
+     * Tests whether the given array is a valid tridiagonal matrix representation.
+     *
+     * <p>A valid representation is non-null, has length 3 at the first level,
+     * contains no null row, and has second-level arrays of equal length n with n >= 1.</p>
+     *
+     * <p>This method makes no assumption that the input is already valid.
+     * If the array is null, contains a null row, has first-level length other than 3,
+     * has rows of unequal length, or has n < 1, the method returns false.</p>
+     *
+     * @param a the two-dimensional array of double values to test as a tridiagonal matrix representation
+     * @return a boolean value: true if a is a valid tridiagonal representation; false otherwise
+     */
 public static boolean isValidTridiagonal(double[][] a) 
 {
     if (a == null || a.length != 3) 
