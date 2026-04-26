@@ -56,6 +56,30 @@ static double[][] exampleMatrix(int n)
     return result;
 }
 
+
+public static boolean isValidTridiagonal(double[][] a) 
+{
+    if (a == null || a.length != 3) 
+	{
+        return false;
+    }
+
+    if (a[0] == null || a[1] == null || a[2] == null) 
+	{
+        return false;
+    }
+
+    int n = a[1].length;
+
+    if (n < 1) 
+	{
+        return false;
+    }
+
+    return a[0].length == n && a[2].length == n;
+}
+
+
     /**
      * Computes the product {@code D * T}, where {@code D} is a diagonal matrix and
      * {@code T} is a tridiagonal matrix.
