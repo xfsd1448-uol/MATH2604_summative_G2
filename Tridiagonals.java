@@ -70,27 +70,27 @@ static double[][] exampleMatrix(int n)
      * @param a the two-dimensional array of double values to test as a tridiagonal matrix representation
      * @return a boolean value: true if a is a valid tridiagonal representation; false otherwise
      */
-public static boolean isValidTridiagonal(double[][] a) 
-{
-    if (a == null || a.length != 3) 
-	{
-        return false;
+    public static boolean isValidTridiagonal(double[][] a) 
+    {
+        if (a == null || a.length != 3) 
+        {
+            return false;
+        }
+
+        if (a[0] == null || a[1] == null || a[2] == null) 
+        {
+            return false;
+        }
+
+        int n = a[1].length;
+
+        if (n < 1) 
+        {
+            return false;
+        }
+
+        return a[0].length == n && a[2].length == n;
     }
-
-    if (a[0] == null || a[1] == null || a[2] == null) 
-	{
-        return false;
-    }
-
-    int n = a[1].length;
-
-    if (n < 1) 
-	{
-        return false;
-    }
-
-    return a[0].length == n && a[2].length == n;
-}
 
 
     /**
