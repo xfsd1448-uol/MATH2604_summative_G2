@@ -12,9 +12,9 @@ class Diagonals
      * Returns the one-dimensional array representation of the example diagonal matrix
      * specified in the assignment.
      *
-     * The returned array stores the diagonal entries 10, 8, 5, -10, and 7.
+     * <p>The returned array stores the diagonal entries 10, 8, 5, -10, and 7.
      *
-     * This method takes no parameters, so no parameter range assumptions or
+     * <p>This method takes no parameters, so no parameter range assumptions or
      * exceptional input cases apply.
      *
      * @return a new array representing the diagonal matrix diag(10, 8, 5, -10, 7)
