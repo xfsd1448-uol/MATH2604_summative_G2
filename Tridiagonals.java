@@ -191,4 +191,58 @@ static double[][] productWithDiagonal(double[] d, double[][] t)
 
         return result;
     }
+
+
+    public static double[] linearSolve(double[][] T, double[] v)
+    {
+        if (!isValidTridiagonal(T) || v == null) 
+        {
+            return null;
+        }
+
+        int n = T[1].length;
+        if (v.length != n) 
+        {
+            return null;
+        }
+
+        // Copy matrix bands so that the input is not modified.
+        double[] upper = new double[n];
+        double[] diag = new double[n];
+        double[] lower = new double[n];
+
+        for (int i = 0; i < n; i++) 
+        {
+		    upper[i] = T[0][i];
+		    diag[i] = T[1][i];
+		    lower[i] = T[2][i];
+        }
+
+	    // Copy right-hand side vector.
+	    double[] rhs = new double[n];
+	    for (int i = 0; i < n; i++) 
+	    {
+		    rhs[i] = v[i];
+	    }
+
+	    // Forward elimination.
+	    for (int i = 1; i < n; i++) 
+	    {
+		    double factor = lower[i - 1] / diag[i - 1];
+		    diag[i] = diag[i] - factor * upper[i - 1];
+		    rhs[i] = rhs[i] - factor * rhs[i - 1];
+	    }
+
+	    // Back substitution.
+	    double[] x = new double[n];
+	    x[n - 1] = rhs[n - 1] / diag[n - 1];
+
+	    for (int i = n - 2; i >= 0; i--) 
+	    {
+		    x[i] = (rhs[i] - upper[i] * x[i + 1]) / diag[i];
+	    }
+
+	    return x;
+    }
+
 }
