@@ -193,6 +193,26 @@ static double[][] productWithDiagonal(double[] d, double[][] t)
     }
 
 
+    /**
+    * Solves the linear system T x = v, where T is an invertible tridiagonal matrix,
+    * v is the right-hand side vector, and x is the solution vector.
+    * This method uses the Thomas algorithm (also called the tridiagonal matrix algorithm).
+    *
+    * <p>The input matrix must follow the assignment storage convention:
+    * T[0][i] stores the entry above the diagonal,
+    * T[1][i] stores the diagonal entry,
+    * and T[2][i] stores the entry below the diagonal.
+    *
+    * <p>This method does not modify the input matrix or the input vector.
+    *
+    * <p>This implementation assumes finite input values and assumes that the given
+    * invertible tridiagonal matrix can be solved by the Thomas algorithm without
+    * encountering a zero pivot.
+    *
+    * @param T the tridiagonal matrix, stored as a double[][] in 3 x n array format
+    * @param v the right-hand side vector, stored as a double[] of length n
+    * @return a new double[] containing the solution vector x, or null if T is invalid, if v is null, or if the dimensions are incompatible.
+    */
     public static double[] linearSolve(double[][] T, double[] v)
     {
         if (!isValidTridiagonal(T) || v == null) 
