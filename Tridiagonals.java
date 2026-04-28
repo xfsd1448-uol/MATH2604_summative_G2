@@ -208,9 +208,7 @@ static double[][] productWithDiagonal(double[] d, double[][] t)
     *
     * <p>This method does not modify the input matrix or the input vector.
     *
-    * <p>This implementation assumes finite input values and assumes that the given
-    * invertible tridiagonal matrix can be solved by the Thomas algorithm without
-    * encountering a zero pivot.
+    * <p>This implementation assumes that T is invertible.
     *
     * @param T the tridiagonal matrix, stored as a double[][] in 3 x n array format
     * @param v the right-hand side vector, stored as a double[] of length n
